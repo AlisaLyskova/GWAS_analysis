@@ -14,9 +14,9 @@
     - natsort
  
 ## Running
-RUN in the folder with test data
 <pre>
-nextflow run main.nf
+    git clone https://github.com/AlisaLyskova/GWAS_analysis
+    nextflow run main.nf
 </pre>
     
 ## Results
