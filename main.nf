@@ -186,6 +186,7 @@ process GWAS_analysis {
 
     ## Manhattan plot
     mh_plot = os.path.join(output_dir, 'manhattan_plot.png')
+    significant_level = 5*(10**-8)
     fig, ax = plt.subplots(figsize=(24, 6))
     sns.scatterplot(ax=ax,
                     data=res_df,
@@ -197,6 +198,7 @@ process GWAS_analysis {
                     size=100,
                     legend=False
                     )
+    ax.axhline(y=-np.log10(significant_level), color=base_color, linestyle='--')
     ticks, labels = get_xticks_and_labels(chr_pos, chr_sizes)
     ax.set_xticks(ticks)
     ax.set_xticklabels(labels)
